@@ -1,5 +1,7 @@
-This is going to be my brute-force solution to my son's "What'zit" puzzle.
-Look in the docs directory for the photos of the solutions sheet.  It would be nice to convert this to a more convenient format for the long-term, like ASCII graphics or SVG (anyone know a good, free OCR tool?).
+This is going to be my brute-force attempt at finding the solutions to my son's
+"What'zit" puzzle.  Look in the docs directory for the photos of the solutions
+sheet.  It would be nice to convert this to a more convenient format for the
+long-term, like ASCII graphics or SVG (anyone know a good, free OCR tool?).
 
 I'm going to be attempting to find all of the 8x8 solutions.  At a bare
 minimum, I would expect to find the four solutions they provide - this would be
