@@ -1,3 +1,8 @@
+# whatzit-puzzle
+
+Distributed under the Eclipse Public License either version 1.0 or (at
+your option) any later version.
+
 This is going to be my brute-force attempt at finding the solutions to my son's
 "What'zit" puzzle.  Look in the docs directory for the photos of the solutions
 sheet.  It would be nice to convert this to a more convenient format for the
@@ -21,3 +26,21 @@ to detect duplicates (through rotations, etc.), so this is a limitation of my
 current plan.
 
 Maybe if I'm feeling even more ambitious, I'll try the 3D solutions as well.
+
+## Usage
+
+FIXME: explanation
+
+    $ java -jar whatzit-puzzle-0.1.0-standalone.jar [args]
+
+## Options
+
+FIXME: listing of options this app accepts.
+
+## Examples
+
+...
+
+### Bugs
+
+...
