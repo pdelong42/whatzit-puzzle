@@ -9,18 +9,18 @@ until I get less lazy.
 
 1)
 
-   **
-   **
+   XX
+   XX
 
 2)
 
-   ***
-    *
+   XXX
+    X
 
 3)
 
-    **
-   **
+    XX
+   XX
 
 4)
 ...
