@@ -1,8 +1,3 @@
-# whatzit-puzzle
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
-
 This is going to be my brute-force attempt at finding the solutions to my son's
 "What'zit" puzzle.  Look in the docs directory for the photos of the solutions
 sheet.  It would be nice to convert this to a more convenient format for the
@@ -27,20 +22,19 @@ current plan.
 
 Maybe if I'm feeling even more ambitious, I'll try the 3D solutions as well.
 
-## Usage
+I think it's time to start defining goals here, or I'll sit
+contemplating this indefinitely and never actually do anything...
 
-FIXME: explanation
+ToDo:
 
-    $ java -jar whatzit-puzzle-0.1.0-standalone.jar [args]
+ - Take a more comprehensive look at enumerating all possible trial
+   solutions.
 
-## Options
+ - Build a convenient data structure (or structures) for representing
+   the board and puzzle pieces in a manner that makes the logic as
+   natural as possible.
 
-FIXME: listing of options this app accepts.
+ - Drawing ASCII maps of the pieces, and some of the known solutions,
+   might be helpful visual aids.
 
-## Examples
-
-...
-
-### Bugs
-
-...
+Okay, that's a start.  There will of-course be more later.
