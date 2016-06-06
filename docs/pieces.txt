@@ -20,5 +20,55 @@ JPEG is too much of a pain.
    XX
 
 4)
-...
+
+   X
+   XXX
+
+5)
+
+   X X
+   XXX
+
+6)
+
+   X
+   X
+   XXX
+
+7)
+
+    XX
+    X
+   XX
+
+8)
+
+    X
+    XX
+   XX
+
+9)
+
+    X
+   XXXX
+
+10)
+
+   XXX
+     XX
+
+11)
+
+   X
+   XXXX
+
+12)
+
+   XXX
+   XXX
+
 13)
+
+   XXX
+    X
+   XXX
