@@ -37,4 +37,12 @@ ToDo:
  - Drawing ASCII maps of the pieces, and some of the known solutions,
    might be helpful visual aids.
 
+ - A termination condition is needed.  At the moment, it's not clear
+   what my criterion is for aborting a test on a candidate sequence,
+   and breaking out early before wasting effort on any more
+   processing.
+
+ - I need a procedure for determining whether a shape fits inside of a
+   given space.
+
 Okay, that's a start.  There will of-course be more later.
