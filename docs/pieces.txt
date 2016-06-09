@@ -4,71 +4,84 @@ Puzzle pieces
 This is here as a visual aid, because sometimes having to alt-tab to a
 JPEG is too much of a pain.
 
+To the right of each is its "envelope", as I'm calling it (there's
+probably a de-facto name for this already, but I haven't really read
+any of the CS literature that might interesect with this problem).
+
 1)
 
-   XX
-   XX
+   XX   XX
+   XX   XX
 
 2)
 
-   XXX
-    X
+   XXX  XXX
+    X   XXX
 
 3)
 
-    XX
-   XX
+    XX  XXX
+   XX   XXX
 
 4)
 
-   X
-   XXX
+   X    XXX
+   XXX  XXX
 
 5)
 
-   X X
-   XXX
+   X X  XXX
+   XXX  XXX
 
 6)
 
-   X
-   X
-   XXX
+   X    XXX
+   X    XXX
+   XXX  XXX
 
 7)
 
-    XX
-    X
-   XX
+    XX  XXX
+    X   XXX
+   XX   XXX
 
 8)
 
-    X
-    XX
-   XX
+    X   XXX
+    XX  XXX
+   XX   XXX
 
 9)
 
-    X
-   XXXX
+    X   XXXX
+   XXXX XXXX
 
 10)
 
-   XXX
-     XX
+   XXX  XXXX
+     XX XXXX
 
 11)
 
-   X
-   XXXX
+   X    XXXX
+   XXXX XXXX
 
 12)
 
-   XXX
-   XXX
+   XXX  XXX
+   XXX  XXX
 
 13)
 
-   XXX
-    X
-   XXX
+   XXX  XXX
+    X   XXX
+   XXX  XXX
+
+So it seems there are only three different envelope shapes for the set
+of pieces in this problem, which may help simplify things (it's too
+early to tell).
+
+Anyhow, I'm only using them to determine the extreme upper-left and
+lower-right corners for each shape, so I know where to begin iterating
+over the containing area (I did mention this is a bruteforce approach,
+right?).
