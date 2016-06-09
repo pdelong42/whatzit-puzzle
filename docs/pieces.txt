@@ -77,7 +77,7 @@ any of the CS literature that might interesect with this problem).
     X   XXX
    XXX  XXX
 
-So it seems there are only three different envelope shapes for the set
+So it seems there are only four different envelope shapes for the set
 of pieces in this problem, which may help simplify things (it's too
 early to tell).
 
