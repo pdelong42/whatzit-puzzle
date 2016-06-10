@@ -50,6 +50,13 @@ ToDo:
    shape).  From that point, I can convolve each piece with the
    remaining space in generating trial solutions.
 
+ - I'll be manually "pre-compiling" the envelopes around each piece -
+   the data structures representing the pieces will already have the
+   envelope shapes built-in (hard-coded, as it were).  This is non
+   ideal, and I'm not crazy about it; but it's a shortcut I'm taking
+   for now, until I get around to writing logic which autmatically
+   calcualtes the envelopes, given a piece as input.
+
  - As the trial solutions are generated, the space to be filled will
    shrink while walking through any one particular trial solution.  I
    should optimize this to account for the smaller space to be
