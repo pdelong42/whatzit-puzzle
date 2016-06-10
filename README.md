@@ -45,4 +45,14 @@ ToDo:
  - I need a procedure for determining whether a shape fits inside of a
    given space.
 
+ - The pieces are generally concave, but I plan to work with their
+   convex counterparts (where gaps are "filled" to make an "envelope"
+   shape).  From that point, I can convolve each piece with the
+   remaining space in generating trial solutions.
+
+ - As the trial solutions are generated, the space to be filled will
+   shrink while walking through any one particular trial solution.  I
+   should optimize this to account for the smaller space to be
+   convolved / iterated over.
+
 Okay, that's a start.  There will of-course be more later.
