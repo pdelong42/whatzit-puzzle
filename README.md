@@ -54,8 +54,8 @@ ToDo:
    the data structures representing the pieces will already have the
    envelope shapes built-in (hard-coded, as it were).  This is non
    ideal, and I'm not crazy about it; but it's a shortcut I'm taking
-   for now, until I get around to writing logic which autmatically
-   calcualtes the envelopes, given a piece as input.
+   for now, until I get around to writing logic which automatically
+   calculates the envelopes, given a piece as input.
 
  - As the trial solutions are generated, the space to be filled will
    shrink while walking through any one particular trial solution.  I
