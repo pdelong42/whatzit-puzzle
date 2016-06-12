@@ -62,4 +62,11 @@ ToDo:
    should optimize this to account for the smaller space to be
    convolved / iterated over.
 
+ - UPDATE: I think I may be approaching this the wrong way.  I should
+   think about doing it "additively" rather than "subtractively".
+   That is, I should consider incrementally growing a shape until all
+   pieces are exhausted, then testing for the desired shape (rather
+   than starting with the desired shape, and progressively subtracting
+   pieces from it).
+
 Okay, that's a start.  There will of-course be more later.
