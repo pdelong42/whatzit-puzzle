@@ -59,7 +59,16 @@
          [0 1 0]
          [1 1 1]  ]  ]  )
 
-(def turn-left #(-> % clojure.core.matrix/transpose reverse))
+(def turn-left #(-> % clojure.core.matrix/transpose reverse vec))
+
+(defn generate
+   [rotations]
+   (let
+      [  newest (turn-left (last rotations))  ]
+      (if
+         (some #(= % newest) rotations)
+         rotations
+         (generate (conj rotations newest))  )  )  )
 
 (defn -main
    [& args]
