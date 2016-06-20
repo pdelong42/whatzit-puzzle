@@ -1,6 +1,8 @@
 (ns whatzit-puzzle.core
    (:require
+      [clojure.string    :refer [join]]
       [clojure.math.combinatorics :refer [permutations cartesian-product]]
+;      [clojure.core.matrix :refer [transpose]] ; for later, during cleanup
       [clojure.core.matrix]  )
    (:gen-class)  )
 
@@ -72,5 +74,9 @@
 
 (defn -main
    [& args]
-   (printf "There are %d pieces.\n" (count pieces))
-   (printf "The board has %d rows.\n" (count board))  )
+   (printf "The board has %d rows.\n" (count  board))
+   (printf "There are %d pieces.\n"   (count pieces))
+   (println
+      "Each piece has "
+      (join \space (map #(-> % vector generate count) pieces))
+      "distinct orientations, respectively."  )  )
