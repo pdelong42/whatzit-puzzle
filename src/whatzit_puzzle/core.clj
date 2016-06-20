@@ -1,9 +1,8 @@
 (ns whatzit-puzzle.core
    (:require
-      [clojure.string    :refer [join]]
+      [clojure.core.matrix        :refer [transpose]]
       [clojure.math.combinatorics :refer [permutations cartesian-product]]
-;      [clojure.core.matrix :refer [transpose]] ; for later, during cleanup
-      [clojure.core.matrix]  )
+      [clojure.string             :refer [join]]  )
    (:gen-class)  )
 
 (def board
@@ -61,7 +60,7 @@
          [0 1 0]
          [1 1 1]  ]  ]  )
 
-(def turn-left #(-> % clojure.core.matrix/transpose reverse vec))
+(def turn-left #(-> % transpose reverse vec))
 
 (defn generate
    [rotations]
