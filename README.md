@@ -11,8 +11,6 @@ I would also expect to get a number of duplicate solutions as well, based on a
 number of factors:
 
  - x4 for the number of rotations of each unique solution
- - x4 for each piece that has four-fold rotational symmetry (there's only one)
- - x2 for each piece with two-fold rotational symmetry (there are four)
 
 This results in a combined factor of 256, or 1024 total solutions when
 duplicates are accounted for.  That's assuming there aren't more than four
@@ -69,4 +67,36 @@ ToDo:
    than starting with the desired shape, and progressively subtracting
    pieces from it).
 
-Okay, that's a start.  There will of-course be more later.
+ - I've managed to prune the duplicate solutions which would've
+   resulted from those pieces which have rotational symmetries.  This
+   was a side-effect of generating the distinct orientations of each
+   piece.
+
+ - To generate a candidate board shape the pieces will form in
+   aggregate, for each trial permutation and rotation configuration of
+   the pieces: start by placing the lower-left corner of the first
+   piece at the origin, then adding subsequent pieces by aligning the
+   lower-left corner of each, iteratively at each coordinate of the
+   board shape that's been accumulated thus far.  Any overlap (i.e.,
+   any cells adding up to more than "1") would be condition for
+   rejecting a candidate.
+
+ - The part I haven't yet figured-out is how to determine whether the
+   candidate board shape is the desired end-result.  Clojure will
+   recognize equality between complex data structures, which gets us
+   most of the way there.  But two boards can still be valid
+   solutions, yet not be equal to each-other.  An example of this is
+   an 8x8 board padded with row or column of zeros.  So I need to find
+   a way to filter-out any zero padding once all the pieces have been
+   placed in a candidate solution.
+
+ - I don't yet know how to think about the rotations of the pieces, in
+   relation to the permutations of the pieces.  Is it just a cartesian
+   product?  Still bouncing this around in my head.
+
+ - It would be nice to have some way to print the solutions in a
+   vaguely graphical form, even if it is just ASCII art.  As long as
+   it's something I can look at and not get a headache.  I can still
+   print out the listing of each piece by number, rotation, and
+   coordinates, so it isn't an absolute necessity (but it would be so
+   much nicer).
