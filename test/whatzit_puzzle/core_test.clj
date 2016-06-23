@@ -13,4 +13,6 @@
    (testing "Orientations"
       (is
          (= rotation-counts
-            (map #(-> % vector generate count) pieces)  )  )  )  )
+            (map
+              #(-> % vector generate-rotations-one-piece count)
+               pieces  )  )  )  )  )

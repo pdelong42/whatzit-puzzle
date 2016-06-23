@@ -63,20 +63,21 @@
 
 (def turn-left #(-> % transpose reverse vec))
 
-(defn generate
+(defn generate-rotations-one-piece
    [rotations]
    (let
       [  newest (turn-left (last rotations))  ]
       (if
          (some #(= % newest) rotations)
          rotations
-         (generate (conj rotations newest))  )  )  )
+         (generate-rotations-one-piece (conj rotations newest))  )  )  )
 
-(def pieces-with-rotations (map #(-> % vector generate) pieces))
+(defn generate-rotations-all-pieces []
+   (map #(-> % vector generate-rotations-one-piece) pieces)  )
 
 (defn step-through-all-combos []
-   (apply cartesian-product pieces-with-rotations)  )
+   (apply cartesian-product (generate-rotations-all-pieces))  )
 
 (defn -main
    [& args]
-   (pprint pieces-with-rotations)  )
+   (pprint (generate-rotations-all-pieces))  )
