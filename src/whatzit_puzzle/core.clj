@@ -2,6 +2,7 @@
    (:require
       [clojure.core.matrix        :refer [transpose]]
       [clojure.math.combinatorics :refer [permutations count-permutations cartesian-product]]
+      [clojure.pprint             :refer [pprint]]
       [clojure.string             :refer [join]]  )
    (:gen-class)  )
 
@@ -71,6 +72,8 @@
          rotations
          (generate (conj rotations newest))  )  )  )
 
+(def pieces-with-rotations (map #(-> % vector generate) pieces))
+
 (defn -main
    [& args]
-   (println "Permutations of pieces: " (count-permutations (range 13)))  )
+   (pprint pieces-with-rotations)  )
