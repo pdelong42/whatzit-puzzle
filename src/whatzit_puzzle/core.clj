@@ -71,11 +71,11 @@
          rotations
          (generate-rotations-one-piece (conj rotations newest))  )  )  )
 
-(defn generate-rotations-all-pieces [x]
-   (map #(-> % vector generate-rotations-one-piece) x)  )
+(defn generate-rotations-all-pieces [p]
+   (map #(-> % vector generate-rotations-one-piece) p)  )
 
-(defn step-through-all-combos []
-   (apply cartesian-product (generate-rotations-all-pieces pieces))  )
+(defn step-through-all-combos [p]
+   (apply cartesian-product (generate-rotations-all-pieces p))  )
 
 (defn -main
    [& args]
