@@ -61,12 +61,11 @@
          [0 1 0]
          [1 1 1]  ]  ]  )
 
-(def turn-left #(-> % transpose reverse vec))
-
 (defn generate-rotations-one-piece
    [rotations]
    (let
-      [  newest (turn-left (last rotations))  ]
+      [  turn-left #(-> % transpose reverse vec)
+         newest (turn-left (last rotations))  ]
       (if
          (some #(= % newest) rotations)
          rotations
