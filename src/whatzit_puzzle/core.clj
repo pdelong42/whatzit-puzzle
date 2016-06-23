@@ -74,6 +74,9 @@
 
 (def pieces-with-rotations (map #(-> % vector generate) pieces))
 
+(defn step-through-all-combos []
+   (apply cartesian-product pieces-with-rotations)  )
+
 (defn -main
    [& args]
    (pprint pieces-with-rotations)  )
