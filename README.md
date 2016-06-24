@@ -21,6 +21,9 @@ contemplating this indefinitely and never actually do anything...
 
 ToDo:
 
+ - This section has grown to the point where it should really be
+   separated into its own file (e.g., NOTES.md).
+
  - Take a more comprehensive look at enumerating all possible trial
    solutions.
 
@@ -96,3 +99,13 @@ ToDo:
    print out the listing of each piece by number, rotation, and
    coordinates, so it isn't an absolute necessity (but it would be so
    much nicer).
+
+ - The function "step-through-all-combos" is really inadequately
+   named.  But to call it something that more accurately reflects its
+   purpose would probably have been unwieldy.  So I'm going to attempt
+   to explain it here.  There are 'N' pieces, and for each of the 'n',
+   there are M(n) distinct rotations.  It's easiest for me to think of
+   it as an N-digit number.  But instead of having the same constant
+   'M' possible choices for each digit, there are M(n) choices for
+   each digit.  That is, 'M' is in-general different for each position
+   'n'.
