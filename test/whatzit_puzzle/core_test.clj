@@ -7,6 +7,15 @@
 
 (def pieces-1x1 [[[1]]])
 
+(def board-2x2
+   [  [1 1]
+      [1 1]  ]  )
+
+(def pieces-2x2
+   [  [  [1 1]
+         [1 0]  ]
+      [  [1]  ]  ]  )
+
 (deftest board-rows (testing "Board rows" (is (= 8 (count board)))))
 
 (deftest pieces-count (testing "Pieces count" (is (= 13 (count pieces)))))
@@ -16,4 +25,5 @@
 (deftest orientations
    (testing "Orientations"
       (is (= [1] (rotation-counts pieces-1x1)))
+      (is (= [4 1] (rotation-counts pieces-2x2)))
       (is (= [1 4 2 4 4 4 2 4 4 4 4 2 2] (rotation-counts pieces)))  )  )
