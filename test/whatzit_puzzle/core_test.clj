@@ -7,12 +7,9 @@
 
 (deftest pieces-count (testing "Pieces count" (is (= 13 (count pieces)))))
 
-(def rotation-counts '(1 4 2 4 4 4 2 4 4 4 4 2 2))
-
 (deftest orientations
    (testing "Orientations"
       (is
-         (= rotation-counts
-            (map
-              #(-> % vector generate-rotations-one-piece count)
-               pieces  )  )  )  )  )
+         (=
+           '(1 4 2 4 4 4 2 4 4 4 4 2 2)
+            (map count (generate-rotations-all-pieces pieces))  )  )  )  )
