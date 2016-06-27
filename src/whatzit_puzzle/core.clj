@@ -1,9 +1,8 @@
 (ns whatzit-puzzle.core
    (:require
       [clojure.core.matrix        :refer [transpose]]
-      [clojure.math.combinatorics :refer [permutations count-permutations cartesian-product]]
-      [clojure.pprint             :refer [pprint]]
-      [clojure.string             :refer [join]]  )
+      [clojure.math.combinatorics :refer [permutations cartesian-product]]
+      [clojure.pprint             :refer [pprint]]  )
    (:gen-class)  )
 
 (def board
