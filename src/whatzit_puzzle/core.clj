@@ -72,11 +72,11 @@
 (defn generate-rotations-all-pieces [ps]
    (map #(-> % vector generate-rotations-one-piece) ps)  )
 
-(defn step-through-all-combos [rps]
+(defn step-through-all-products [rps]
    (apply cartesian-product (generate-rotations-all-pieces rps))  )
 
-(defn permute-each-combo [c]
-   (reduce into (map permutations (step-through-all-combos c)))  )
+(defn permute-each-product [ps]
+   (reduce into (map permutations (step-through-all-products ps)))  )
 
 (defn -main
    [& args]
