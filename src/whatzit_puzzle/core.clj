@@ -75,6 +75,9 @@
 (defn step-through-all-combos [rps]
    (apply cartesian-product (generate-rotations-all-pieces rps))  )
 
+(defn permute-each-combo [c]
+   (reduce into (map permutations (step-through-all-combos c)))  )
+
 (defn -main
    [& args]
    (-> pieces generate-rotations-all-pieces pprint)  )
