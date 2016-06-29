@@ -28,7 +28,7 @@
 
 (deftest orientations
    (testing "Orientations"
-      (is (= [1] (rotation-counts pieces-1x1)))
-      (is (= [4 1] (rotation-counts pieces-2x2a)))
-      (is (= [2 2] (rotation-counts pieces-2x2b)))
-      (is (= [1 4 2 4 4 4 2 4 4 4 4 2 2] (rotation-counts pieces)))  )  )
+      (is (= (rotation-counts pieces-1x1)  [1]))
+      (is (= (rotation-counts pieces-2x2a) [4 1]))
+      (is (= (rotation-counts pieces-2x2b) [2 2]))
+      (is (= (rotation-counts pieces)      [1 4 2 4 4 4 2 4 4 4 4 2 2]))  )  )
