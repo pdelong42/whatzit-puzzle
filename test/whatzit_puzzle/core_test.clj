@@ -5,26 +5,43 @@
 
 (def board-1x1 [[1]])
 
-(def pieces-1x1 [[[1]]])
-
 (def board-2x2
    [  [1 1]
       [1 1]  ]  )
 
+(def pieces-1x1 [[[1]]])
+
 (def pieces-2x2a
    [  [  [1 1]
          [1 0]  ]
-      [  [1]  ]  ]  )
+      [   [1]   ]  ]  )
 
 (def pieces-2x2b
    [  [  [1 1]  ]
       [  [1 1]  ]  ]  )
+
+(def pieces-1x1-wrapped [[[[1]]]])
+
+(def pieces-2x2a-wrapped
+  [  [  [  [1 1]
+           [1 0]  ]  ]
+     [  [   [1]   ]  ]  ]  )
+
+(def pieces-2x2b-wrapped
+  [  [  [  [1 1]  ]  ]
+     [  [  [1 1]  ]  ]  ]  )
 
 (deftest board-rows (testing "Board rows" (is (= 8 (count board)))))
 
 (deftest pieces-count (testing "Pieces count" (is (= 13 (count pieces)))))
 
 (def rotation-counts #(vec (map count (generate-rotations-all-pieces %))))
+
+(deftest vector-wrapper
+   (testing "Vector Wrapper"
+      (is (= pieces-1x1-wrapped  (wrap-each-piece-in-vector pieces-1x1)))
+      (is (= pieces-2x2a-wrapped (wrap-each-piece-in-vector pieces-2x2a)))
+      (is (= pieces-2x2b-wrapped (wrap-each-piece-in-vector pieces-2x2b)))  )  )
 
 (deftest orientations
    (testing "Orientations"

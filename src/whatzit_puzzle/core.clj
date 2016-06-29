@@ -69,8 +69,7 @@
          rotations
          (generate-rotations-one-piece (conj rotations newest))  )  )  )
 
-; make a singleton group out of each piece, before generating its rotations
-(def wrap-each-piece-in-vector #(map vector %))
+(def wrap-each-piece-in-vector #(vec (map vector %))) ; footnote 1
 
 (def generate-rotations-all-vectors #(map generate-rotations-one-piece %))
 
@@ -91,3 +90,8 @@
 (defn -main
    [& args]
    (-> pieces generate-rotations-all-pieces pprint)  )
+
+; Footnote 1:
+; 
+; Make a singleton group out of each piece, before generating its
+; rotations.
