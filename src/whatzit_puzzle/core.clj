@@ -69,18 +69,24 @@
          rotations
          (generate-rotations-one-piece (conj rotations newest))  )  )  )
 
-(defn generate-rotations-all-pieces [ps]
-   (map #(-> % vector generate-rotations-one-piece) ps)  )
+; make a singleton group out of each piece, before generating its rotations
+(def wrap-each-piece-in-vector #(map vector %))
+
+(def generate-rotations-all-vectors #(map generate-rotations-one-piece %))
 
 (def step-through-all-products #(apply cartesian-product %))
 
 (def permute-each-product #(reduce into (map permutations %)))
 
+(def generate-rotations-all-pieces
+   (comp generate-rotations-all-vectors wrap-each-piece-in-vector)  )
+
 (def generate-all-permutations
    (comp
       permute-each-product
       step-through-all-products
-      generate-rotations-all-pieces  )  )
+      generate-rotations-all-vectors
+      wrap-each-piece-in-vector  )  )
 
 (defn -main
    [& args]
