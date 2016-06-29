@@ -31,11 +31,20 @@
   [  [  [  [1 1]  ]  ]
      [  [  [1 1]  ]  ]  ]  )
 
-(deftest board-rows (testing "Board rows" (is (= 8 (count board)))))
-
-(deftest pieces-count (testing "Pieces count" (is (= 13 (count pieces)))))
-
 (def rotation-counts #(vec (map count (generate-rotations-all-pieces %))))
+
+(deftest board-rows
+   (testing "Board rows"
+      (is (= 1 (count board-1x1)))
+      (is (= 2 (count board-2x2)))
+      (is (= 8 (count board)))  )  )
+
+(deftest pieces-count
+   (testing "Pieces count"
+      (is (= 1  (count pieces-1x1)))
+      (is (= 2  (count pieces-2x2a)))
+      (is (= 2  (count pieces-2x2b)))
+      (is (= 13 (count pieces)))  )  )
 
 (deftest vector-wrapper
    (testing "Vector Wrapper"
