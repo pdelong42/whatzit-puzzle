@@ -3,6 +3,8 @@
    to logic for placing the next piece, choosing trial anchors at
    which to place the lower-left corner of the piece.
 
+ - Next step: Write more unit tests for the existing functions.
+
  - A termination condition is needed.  At the moment, it's not clear
    what my criterion is for aborting a test on a candidate sequence,
    and breaking out early before wasting effort on any more
