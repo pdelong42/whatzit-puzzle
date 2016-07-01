@@ -55,20 +55,17 @@
 
 (def rotation-counts #(vec (map count (generate-rotations-all-pieces %))))
 
-(deftest board-rows
-   (testing "Board rows"
-      (is (= 1 (count board-1x1)))
-      (is (= 2 (count board-2x2)))
-      (is (= 8 (count board)))  )  )
-
-(deftest pieces-count
-   (testing "Pieces count"
-      (is (= 1  (count pieces-1x1)))
-      (is (= 2  (count pieces-2x2a)))
-      (is (= 2  (count pieces-2x2b)))
-      (is (= 3  (count pieces-2x2c)))
-      (is (= 4  (count pieces-2x2d)))
-      (is (= 13 (count pieces)))  )  )
+(deftest dimensions-of-pieces
+   (testing "Piece dimensions"
+      (is (= [1 1] (piece-dimensions board-1x1)))
+      (is (= [2 2] (piece-dimensions board-2x2)))
+      (is (= [8 8] (piece-dimensions board)))
+      (is (= [[1 1]] (map piece-dimensions pieces-1x1)))
+      (is (= [[2 2] [1 1]] (map piece-dimensions pieces-2x2a)))
+      (is (= [[1 2] [1 2]] (map piece-dimensions pieces-2x2b)))
+      (is (= [[1 2] [1 1] [1 1]] (map piece-dimensions pieces-2x2c)))
+      (is (= [[1 1] [1 1] [1 1] [1 1]] (map piece-dimensions pieces-2x2d)))
+      (comment "placeholder for master list of pieces")  )  )
 
 (deftest vector-wrapper
    (testing "Vector Wrapper"

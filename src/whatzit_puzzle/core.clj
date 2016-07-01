@@ -60,6 +60,11 @@
          [0 1 0]
          [1 1 1]  ]  ]  )
 
+(defn piece-dimensions
+   [piece]
+   [  (count piece)
+      (apply max (map count piece))  ]  )
+
 (defn generate-rotations-one-piece
    [rotations]
    (let
