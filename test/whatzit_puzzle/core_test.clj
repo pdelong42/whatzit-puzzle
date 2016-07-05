@@ -67,6 +67,10 @@
       (is (= [[1 1] [1 1] [1 1] [1 1]] (map piece-dimensions pieces-2x2d)))
       (comment "placeholder for master list of pieces")  )  )
 
+(deftest anchors-test
+   (testing "Anchors of pieces"
+      (is (= (anchors-of-piece board-1x1) '((0 0) (0 1) (1 0) (1 1))))  )  )
+
 (deftest vector-wrapper
    (testing "Vector Wrapper"
       (is (= pieces-1x1-wrapped  (wrap-each-piece-in-vector pieces-1x1)))

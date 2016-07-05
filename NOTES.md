@@ -62,6 +62,10 @@
    each digit.  That is, 'M' is in-general different for each position
    'n'.
 
+ - It seems really inefficient to run "anchors-of-piece" every time I
+   run across a piece I've seen before.  So I need to think of some
+   way to cache the results.
+
  - [X] Take a more comprehensive look at enumerating all possible
    trial solutions.
 
