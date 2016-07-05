@@ -57,14 +57,14 @@
 
 (deftest dimensions-of-pieces
    (testing "Piece dimensions"
-      (is (= [1 1] (piece-dimensions board-1x1)))
-      (is (= [2 2] (piece-dimensions board-2x2)))
-      (is (= [8 8] (piece-dimensions board)))
-      (is (= [[1 1]] (map piece-dimensions pieces-1x1)))
-      (is (= [[2 2] [1 1]] (map piece-dimensions pieces-2x2a)))
-      (is (= [[1 2] [1 2]] (map piece-dimensions pieces-2x2b)))
-      (is (= [[1 2] [1 1] [1 1]] (map piece-dimensions pieces-2x2c)))
-      (is (= [[1 1] [1 1] [1 1] [1 1]] (map piece-dimensions pieces-2x2d)))
+      (is (= (piece-dimensions board-1x1) [1 1]))
+      (is (= (piece-dimensions board-2x2) [2 2]))
+      (is (= (piece-dimensions board)     [8 8]))
+      (is (= (map piece-dimensions pieces-1x1)  [[1 1]]))
+      (is (= (map piece-dimensions pieces-2x2a) [[2 2] [1 1]]))
+      (is (= (map piece-dimensions pieces-2x2b) [[1 2] [1 2]]))
+      (is (= (map piece-dimensions pieces-2x2c) [[1 2] [1 1] [1 1]]))
+      (is (= (map piece-dimensions pieces-2x2d) [[1 1] [1 1] [1 1] [1 1]]))
       (comment "placeholder for master list of pieces")  )  )
 
 (deftest anchors-test
