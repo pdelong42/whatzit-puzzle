@@ -69,7 +69,7 @@
 
 (deftest anchors-test
    (testing "Anchors of pieces"
-      (is (= (anchors-of-piece board-1x1) '((0 0) (0 1) (1 0) (1 1))))  )  )
+      (is (= (anchors-of-piece board-1x1) #{[0 0] [0 1] [1 0] [1 1]}))  )  )
 
 (deftest vector-wrapper
    (testing "Vector Wrapper"
