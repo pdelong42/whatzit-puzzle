@@ -60,16 +60,16 @@
          [0 1 0]
          [1 1 1]  ]  ]  )
 
-(defn piece-dimensions
+(defn envelope-dimensions
    [piece]
    [  (count piece)
       (apply max (map count piece))  ]  )
 
-(defn anchors-of-piece
+(defn anchors-of-envelope
    [piece]
    (->>
       piece
-      piece-dimensions
+      envelope-dimensions
       (map #(range (inc %)))
       (apply cartesian-product)
       (map vec)

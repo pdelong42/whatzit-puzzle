@@ -55,21 +55,21 @@
 
 (def rotation-counts #(vec (map count (generate-rotations-all-pieces %))))
 
-(deftest dimensions-of-pieces
-   (testing "Piece dimensions"
-      (is (= (piece-dimensions board-1x1) [1 1]))
-      (is (= (piece-dimensions board-2x2) [2 2]))
-      (is (= (piece-dimensions board)     [8 8]))
-      (is (= (map piece-dimensions pieces-1x1)  [[1 1]]))
-      (is (= (map piece-dimensions pieces-2x2a) [[2 2] [1 1]]))
-      (is (= (map piece-dimensions pieces-2x2b) [[1 2] [1 2]]))
-      (is (= (map piece-dimensions pieces-2x2c) [[1 2] [1 1] [1 1]]))
-      (is (= (map piece-dimensions pieces-2x2d) [[1 1] [1 1] [1 1] [1 1]]))
+(deftest dimensions-test
+   (testing "Piece envelope dimensions"
+      (is (= (envelope-dimensions board-1x1) [1 1]))
+      (is (= (envelope-dimensions board-2x2) [2 2]))
+      (is (= (envelope-dimensions board)     [8 8]))
+      (is (= (map envelope-dimensions pieces-1x1)  [[1 1]]))
+      (is (= (map envelope-dimensions pieces-2x2a) [[2 2] [1 1]]))
+      (is (= (map envelope-dimensions pieces-2x2b) [[1 2] [1 2]]))
+      (is (= (map envelope-dimensions pieces-2x2c) [[1 2] [1 1] [1 1]]))
+      (is (= (map envelope-dimensions pieces-2x2d) [[1 1] [1 1] [1 1] [1 1]]))
       (comment "placeholder for master list of pieces")  )  )
 
 (deftest anchors-test
-   (testing "Anchors of pieces"
-      (is (= (anchors-of-piece board-1x1) #{[0 0] [0 1] [1 0] [1 1]}))  )  )
+   (testing "Anchors of piece envelopes"
+      (is (= (anchors-of-envelope board-1x1) #{[0 0] [0 1] [1 0] [1 1]}))  )  )
 
 (deftest vector-wrapper
    (testing "Vector Wrapper"
