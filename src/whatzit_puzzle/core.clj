@@ -67,12 +67,13 @@
 
 (defn anchors-of-piece
    [piece]
-   (set
-      (map vec
-         (apply cartesian-product
-            (map
-              #(range (inc %))
-               (piece-dimensions piece)  )  )  )  )  )
+   (->>
+      piece
+      piece-dimensions
+      (map #(range (inc %)))
+      (apply cartesian-product)
+      (map vec)
+      set  )  )
 
 (defn generate-rotations-one-piece
    [rotations]
