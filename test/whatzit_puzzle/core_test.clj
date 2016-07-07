@@ -70,12 +70,22 @@
    [  (coord-range 0 coords-list)
       (coord-range 1 coords-list)  ]  )
 
+(defn add-col
+   (  [] (add-col anchors-0x0))
+   (  [anchors]
+      (let
+         [  [w h] (coord-ranges anchors)
+            wv (vector w) hr (range h)  ]
+         (into anchors (map vec (cartesian-product wv hr)))  )  )  )
+
 (defn add-row
    (  [] (add-row anchors-0x0))
    (  [anchors]
       (let
-         [  [w h] (coord-ranges anchors)  ]
-         (into anchors (map vec (cartesian-product (range w) [h])))  )  )  )
+         [  [w h] (coord-ranges anchors)
+            wr (range w) hv (vector h)  ]
+         (into anchors (map vec (cartesian-product wr hv)))  )  )  )
+
 
 (def rotation-counts #(vec (map count (generate-rotations-all-pieces %))))
 
