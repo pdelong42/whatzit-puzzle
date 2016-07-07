@@ -1,5 +1,6 @@
 (ns whatzit-puzzle.core-test
    (:require
+      [clojure.math.combinatorics :refer [permutations cartesian-product]]
       [clojure.test        :refer :all]
       [whatzit-puzzle.core :refer :all]  )  )
 
@@ -52,6 +53,29 @@
       [  [  [1]  ]  ]
       [  [  [1]  ]  ]
       [  [  [1]  ]  ]  ]  )
+
+(def anchors-0x0 #{[0 0]})
+
+(defn coord-range
+   [  pos coord-list  ]
+   (let
+      [  x (map #(nth % pos) coord-list)  ]
+      (if
+         (empty? x)
+         0
+         (inc (apply max x))  )  )  )
+
+(defn coord-ranges
+   [coords-list]
+   [  (coord-range 0 coords-list)
+      (coord-range 1 coords-list)  ]  )
+
+(defn add-row
+   (  [] (add-row anchors-0x0))
+   (  [anchors]
+      (let
+         [  [w h] (coord-ranges anchors)  ]
+         (into anchors (map vec (cartesian-product (range w) [h])))  )  )  )
 
 (def rotation-counts #(vec (map count (generate-rotations-all-pieces %))))
 
