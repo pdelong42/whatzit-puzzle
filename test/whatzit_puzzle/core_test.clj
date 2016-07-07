@@ -35,13 +35,13 @@
 (def pieces-1x1-wrapped [[[[1]]]])
 
 (def pieces-2x2a-wrapped
-  [  [  [  [1 1]
-           [1 0]  ]  ]
-     [  [   [1]   ]  ]  ]  )
+   [  [  [  [1 1]
+            [1 0]  ]  ]
+      [  [   [1]   ]  ]  ]  )
 
 (def pieces-2x2b-wrapped
-  [  [  [  [1 1]  ]  ]
-     [  [  [1 1]  ]  ]  ]  )
+   [  [  [  [1 1]  ]  ]
+      [  [  [1 1]  ]  ]  ]  )
 
 (def pieces-2x2c-wrapped
    [  [  [  [1 1]  ]  ]
