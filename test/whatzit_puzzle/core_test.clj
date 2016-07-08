@@ -86,6 +86,9 @@
             wr (range w) hv (vector h)  ]
          (into anchors (map vec (cartesian-product wr hv)))  )  )  )
 
+(def anchors-1x1 (add-row (add-col anchors-0x0)))
+
+(def anchors-2x2 (add-row (add-col anchors-1x1)))
 
 (def rotation-counts #(vec (map count (generate-rotations-all-pieces %))))
 
@@ -103,7 +106,9 @@
 
 (deftest anchors-test
    (testing "Anchors of piece envelopes"
-      (is (= (anchors-of-envelope board-1x1) #{[0 0] [0 1] [1 0] [1 1]}))  )  )
+      (is (= (anchors-of-envelope board-1x1) anchors-1x1))
+      (is (= (anchors-of-envelope board-2x2) anchors-2x2))
+      (comment "placeholder for master list of pieces")  )  )
 
 (deftest vector-wrapper
    (testing "Vector Wrapper"
