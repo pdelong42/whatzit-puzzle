@@ -88,7 +88,30 @@
 
 (def anchors-1x1 (add-row (add-col anchors-0x0)))
 
-(def anchors-2x2 (add-row (add-col anchors-1x1)))
+(def anchors-1x2 (add-col anchors-1x1))
+
+(def anchors-2x2 (add-row anchors-1x2))
+
+(def anchors-2x3 (add-col anchors-2x2))
+
+(def anchors-2x4 (add-col anchors-2x3))
+
+(def anchors-3x3 (add-row anchors-2x3))
+
+(def pieces-to-anchors-map
+   [  anchors-2x2
+      anchors-2x3
+      anchors-2x3
+      anchors-2x3
+      anchors-2x3
+      anchors-3x3
+      anchors-3x3
+      anchors-3x3
+      anchors-2x4
+      anchors-2x4
+      anchors-2x4
+      anchors-2x3
+      anchors-3x3  ]  )
 
 (def rotation-counts #(vec (map count (generate-rotations-all-pieces %))))
 
@@ -108,6 +131,7 @@
    (testing "Anchors of piece envelopes"
       (is (= (anchors-of-envelope board-1x1) anchors-1x1))
       (is (= (anchors-of-envelope board-2x2) anchors-2x2))
+      (is (= (vec (map anchors-of-envelope pieces)) pieces-to-anchors-map))
       (comment "placeholder for master list of pieces")  )  )
 
 (deftest vector-wrapper
