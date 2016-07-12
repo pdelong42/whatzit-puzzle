@@ -76,17 +76,17 @@
    (  [] (add-col anchors-0x0))
    (  [anchors]
       (let
-         [  [w h] (coord-ranges anchors)
-            wv (vector w) hr (range h)  ]
-         (into anchors (map vec (cartesian-product wv hr)))  )  )  )
+         [  [h w] (coord-ranges anchors)
+             hr (range h) wv (vector w)  ]
+         (into anchors (map vec (cartesian-product hr wv)))  )  )  )
 
 (defn add-row
    (  [] (add-row anchors-0x0))
    (  [anchors]
       (let
-         [  [w h] (coord-ranges anchors)
-            wr (range w) hv (vector h)  ]
-         (into anchors (map vec (cartesian-product wr hv)))  )  )  )
+         [  [h w] (coord-ranges anchors)
+             hv (vector h)wr (range w)  ]
+         (into anchors (map vec (cartesian-product hv wr)))  )  )  )
 
 (def anchors-1x1 (add-row (add-col anchors-0x0)))
 
