@@ -134,7 +134,7 @@
       (is (= (anchors-of-envelope board-1x1) anchors-1x1))
       (is (= (anchors-of-envelope board-1x2) anchors-1x2))
       (is (= (anchors-of-envelope board-2x2) anchors-2x2))
-;      (is (= (vec (map anchors-of-envelope pieces)) pieces-to-anchors-map))
+      (is (= (vec (map anchors-of-envelope pieces)) pieces-to-anchors-map))
       (comment "placeholder for master list of pieces")  )  )
 
 (deftest vector-wrapper
