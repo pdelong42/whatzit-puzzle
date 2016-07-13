@@ -137,7 +137,7 @@
       (is (= (vec (map anchors-of-envelope pieces)) pieces-to-anchors-map))
       (comment "placeholder for master list of pieces")  )  )
 
-(deftest vector-wrapper
+(deftest vector-wrapper-test
    (testing "Vector Wrapper"
       (is (= pieces-1x1-wrapped  (wrap-each-piece-in-vector pieces-1x1)))
       (is (= pieces-2x2a-wrapped (wrap-each-piece-in-vector pieces-2x2a)))
@@ -146,8 +146,8 @@
       (is (= pieces-2x2d-wrapped (wrap-each-piece-in-vector pieces-2x2d)))
       (comment "placeholder for master list of pieces")  )  )
 
-(deftest orientations
-   (testing "Orientations"
+(deftest orientations-count-test
+   (testing "Orientations Count"
       (is (= (rotation-counts pieces-1x1)  [1]))
       (is (= (rotation-counts pieces-2x2a) [4 1]))
       (is (= (rotation-counts pieces-2x2b) [2 2]))
