@@ -1,7 +1,10 @@
  - Next step: Write logic to take a piece as input, and produce a list
    of coordinates as output.  Those coordinates will be used as input
    to logic for placing the next piece, choosing trial anchors at
-   which to place the lower-left corner of the piece.
+   which to place the lower-left corner of the piece.  Update: it's
+   done, but it applies to the envelopes of the pieces, not to the
+   pieces themselves.  Trimming out the coordinates that represent
+   unusable anchors can be left as an optimization for later.
 
  - Next step: Write more unit tests for the existing functions.
 
