@@ -102,6 +102,8 @@
       generate-rotations-all-vectors
       wrap-each-piece-in-vector  )  )
 
+(defn add-points [p q] (vec (map #(+ %1 %2) p q))) ; footnote 2
+
 (defn -main
    [& args]
    (-> pieces generate-rotations-all-pieces pprint)  )
@@ -110,3 +112,8 @@
 ; 
 ; Make a singleton group out of each piece, before generating its
 ; rotations.
+;
+; Footnote 2:
+;
+; I really ought to generalize this to a) more than two operands; and
+; b) more than two coordinates per-point
