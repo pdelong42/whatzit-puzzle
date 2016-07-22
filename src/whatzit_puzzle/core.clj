@@ -75,6 +75,12 @@
       (map vec)
       set  )  )
 
+(defn add-points [p q] (vec (map #(+ %1 %2) p q))) ; footnote 2
+
+(defn offset-anchor-set
+   [point anchors]
+   (set (map #(add-points point %) anchors))  )
+
 (defn generate-rotations-one-piece
    [rotations]
    (let
@@ -102,7 +108,6 @@
       generate-rotations-all-vectors
       wrap-each-piece-in-vector  )  )
 
-(defn add-points [p q] (vec (map #(+ %1 %2) p q))) ; footnote 2
 
 (defn -main
    [& args]
